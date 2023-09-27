@@ -12,7 +12,12 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
-            Text("Hello")
+            NavigationStack {
+                AuthenticationView()
+            }
+        }
+        .onAppear {
+            
         }
         .fullScreenCover(isPresented: $showSignInView, content: {
             NavigationStack {
