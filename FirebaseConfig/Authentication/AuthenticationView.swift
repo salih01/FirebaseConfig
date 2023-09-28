@@ -11,7 +11,6 @@ struct AuthenticationView: View {
     var body: some View {
 
         VStack {
-        
             NavigationLink {
                 SignInEmailView()
             } label: {
@@ -20,7 +19,7 @@ struct AuthenticationView: View {
                     .foregroundColor(.white)
                     .frame(height: 55)
                     .frame(maxWidth: .infinity)
-                    .background(Color.red)
+                    .background(Color.black)
                     .cornerRadius(15)
                     .padding(10)
                 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A6852FC2AC592CD0079E181 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6852FB2AC592CD0079E181 /* SettingsView.swift */; };
 		3AE423F32AC2E94100FAD5AC /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE423F22AC2E94100FAD5AC /* AuthenticationView.swift */; };
 		3AE423F52AC2EB9A00FAD5AC /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE423F42AC2EB9A00FAD5AC /* SignInEmailView.swift */; };
 		3AE423F72AC2F15F00FAD5AC /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE423F62AC2F15F00FAD5AC /* AuthenticationManager.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A6852FB2AC592CD0079E181 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3AE423F22AC2E94100FAD5AC /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		3AE423F42AC2EB9A00FAD5AC /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		3AE423F62AC2F15F00FAD5AC /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				3AE423F42AC2EB9A00FAD5AC /* SignInEmailView.swift */,
 				3AE423F62AC2F15F00FAD5AC /* AuthenticationManager.swift */,
 				3AE423F82AC35A4500FAD5AC /* RootView.swift */,
+				3A6852FB2AC592CD0079E181 /* SettingsView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6852FC2AC592CD0079E181 /* SettingsView.swift in Sources */,
 				3AED06ED2AC1B0CB00E9E283 /* ContentView.swift in Sources */,
 				3AED06EB2AC1B0CB00E9E283 /* FirebaseConfigApp.swift in Sources */,
 				3AE423F92AC35A4500FAD5AC /* RootView.swift in Sources */,
@@ -394,6 +398,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +428,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
