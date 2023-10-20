@@ -26,6 +26,7 @@ final class SettingsViewModel:ObservableObject {
 }
 
 
+
 struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var showSignInView:Bool
