@@ -8,6 +8,9 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import GoogleSignInSwift
+import GoogleSignIn
+
 struct AuthDataResultModel {
     let uid:String?
     let email:String?
@@ -54,6 +57,21 @@ final class AuthenticationManager {
     // MARK: - Reset Password
     func resetPassword(email:String) async throws {
        try await Auth.auth().sendPasswordReset(withEmail: email )
+    }
+    
+}
+
+// MARK: -  Google
+extension AuthenticationManager {
+    
+    func signInWithGoogle(credential: AuthCredential) async throws -> AuthDataResultModel {
+    //    let credential = GoogleAuthProvider.credential(withIDToken:idToken, accessToken: accessToken)
+        return try await signIn(credential: credential)
+    }
+    
+    func signIn(credential: AuthCredential) async throws -> AuthDataResultModel {
+        let authDataResult = try await Auth.auth().signIn(with: credential)
+        return AuthDataResultModel(user: authDataResult.user)
     }
     
 }
