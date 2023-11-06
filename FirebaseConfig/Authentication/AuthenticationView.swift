@@ -8,30 +8,15 @@
 import SwiftUI
 import GoogleSignIn
 import GoogleSignInSwift
-import FirebaseAuth
-
-struct GoogleSignresultModel {
-    let idToken:String
-    let accessToken:String
-}
 
 
 @MainActor
 final class AuthenticationViewModel:ObservableObject {
     
     func signInGoogle() async throws {
-        guard let topVC = Utilities.topViewController() else {
-            throw URLError(.cannotFindHost)
-        }
-        
-        let gidSignInResult = try await GIDSignIn.sharedInstance.signIn(withPresenting: topVC)
-        
-        guard let idToken:String = gidSignInResult.user.idToken?.tokenString else {
-            throw URLError(.badServerResponse)
-        }
-        let accessToken:String = gidSignInResult.user.accessToken.tokenString
-        
-        
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signIn()
+        try await AuthenticationManager.shared.signInWithGoogle(tokens: tokens)
 
         
     }
@@ -39,6 +24,7 @@ final class AuthenticationViewModel:ObservableObject {
 struct AuthenticationView: View {
     
     @Binding var showSignInView:Bool
+    @StateObject private var viewModel = AuthenticationViewModel()
     var body: some View {
 
         VStack {
@@ -56,7 +42,14 @@ struct AuthenticationView: View {
                 
             }
             GoogleSignInButton(viewModel: GoogleSignInButtonViewModel(scheme: .dark,style: .standard,state: .normal)) {
-                
+                Task {
+                    do {
+                        try await viewModel.signInGoogle()
+                        showSignInView = false
+                    } catch {
+                        print(error.localizedDescription)
+                    }
+                }
                 
             }
             .padding()
